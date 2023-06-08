@@ -19,9 +19,9 @@ Node * reverseList(Node * head)
   Node * curr = head;
   Node * back = head->next;
 
-  while (curr != nullptr)
+  //while (curr != nullptr)
   {
-    if(prev = nullptr)
+  //  if(prev = nullptr)
     {
       curr->next = nullptr;
 
