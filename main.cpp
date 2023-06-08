@@ -46,5 +46,6 @@ int main()
   b.next = &c;
   c.next = &d;
 
-  std::cout<<reverseList(a);
+  Node * end =reverseList(&a);
+  std::cout <<"end "<<end->val;
 }
