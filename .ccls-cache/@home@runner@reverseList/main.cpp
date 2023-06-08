@@ -18,6 +18,20 @@ Node * reverseList(Node * head)
   Node * prev = nullptr;
   Node * curr = head;
   Node * back = head->next;
+
+  while (curr != nullptr)
+  {
+    if(prev = nullptr)
+    {
+      curr->next = nullptr;
+
+      prev = curr;
+      curr = back;
+      back = back->next;
+    }
+  }
+
+  return prev;
 }
 int main() 
 {
@@ -32,5 +46,5 @@ int main()
   b.next = &c;
   c.next = &d;
 
-  reverseList(a);
+  std::cout<<reverseList(a);
 }
