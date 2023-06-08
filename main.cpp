@@ -21,7 +21,7 @@ Node * reverseList(Node * head)
 
   //while (curr != nullptr)
   {
-  //  if(prev = nullptr)
+    if(prev == nullptr)
     {
       curr->next = nullptr;
 
