@@ -13,6 +13,24 @@ class Node
   }
 };
 
-int main() {
-  std::cout << "Hello World!\n";
+Node * reverseList(Node * head)
+{
+  Node * prev = nullptr;
+  Node * curr = head;
+  Node * back = head->next;
+}
+int main() 
+{
+  Node a("a");
+  Node b("b");
+  Node c("c");
+  Node d("d");
+  Node e("e");
+  Node f("f");
+
+  a.next = &b;
+  b.next = &c;
+  c.next = &d;
+
+  reverseList(a);
 }
