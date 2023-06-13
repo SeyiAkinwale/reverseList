@@ -46,16 +46,15 @@ Node * reverseList(Node * head)
 Node * reverseList(Node * head, Node * prev)
 {
   Node * curr = head;
-//  Node * back = head->next;
-  if (head == nullptr) return head;
-  else if (head->next == nullptr) return head;
+  if (head == nullptr) return prev;
   else
   {
+    Node * newHead = reverseList(head->next,head);
     curr->next=prev;
-    return (head->next,head);
-    std::cout<<"hi3"<<std::endl;
+    return newHead;
   }
 }
+
 int main() 
 {
   Node * cute = nullptr;
@@ -67,10 +66,10 @@ int main()
   Node f("f");
 
  a.next = &b;
-//  b.next = &c;
-//  c.next = &d;
-//  d.next = &e;
-//  e.next = &f;
+  b.next = &c;
+  c.next = &d;
+  d.next = &e;
+  e.next = &f;
 
 //  std::cout<<"b "<<b.val<<std::endl;
 
@@ -81,5 +80,5 @@ int main()
   if(end.next == nullptr)std::cout<<std::endl<<"nullptr";
   else std::cout <<std::endl<<end.val;
   
-  printList(&b);
+  printList(&f);
 }
