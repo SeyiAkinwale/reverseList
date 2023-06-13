@@ -24,6 +24,7 @@ void printList(Node * head)
     curr=curr->next;
   }
 }
+
 Node * reverseList(Node * head)
 {
 
@@ -50,7 +51,16 @@ Node * reverseList(Node * head)
       back = back->next;
       std::cout<<std::endl<<"hi2";
     }
-
+      
+    else if(prev !=nullptr && (back != nullptr)) //middle of 2+ elems
+    {
+       curr->next = prev;
+        prev = curr;
+        curr = back;
+       back = back->next;
+        std::cout<<std::endl<<"hi4";
+    }
+      
     else if (prev != nullptr && (back == nullptr)) //last of 2+ elems
     {
       curr->next = prev;
@@ -59,14 +69,7 @@ Node * reverseList(Node * head)
       back = nullptr;
       std::cout<<std::endl<<"hi3";
     }
-  else if(prev !=nullptr && (back != nullptr)) //middle of 2+ elems
-  {
-     curr->next = prev;
-      prev = curr;
-      curr = back;
-     back = back->next;
-      std::cout<<std::endl<<"hi4";
-  }
+
 //  std::cout<<std::endl<<prev->val;
 
   }
