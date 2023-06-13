@@ -34,7 +34,7 @@ Node * reverseList(Node * head)
 
   while (curr != nullptr)
   { 
-      std::cout<<"watch";
+      std::cout<<std::endl<<"watch";
     if (prev == nullptr && (back == nullptr)) //singleton
     {
       prev = curr;
@@ -42,7 +42,7 @@ Node * reverseList(Node * head)
       std::cout<<std::endl<<"hi1";
     }
 
-    else if (prev == nullptr && (back != nullptr)) //first of 2 elems
+    else if (prev == nullptr && (back != nullptr)) //first of 2+ elems
     {
       curr->next = nullptr;
       prev = curr;
@@ -51,7 +51,7 @@ Node * reverseList(Node * head)
       std::cout<<std::endl<<"hi2";
     }
 
-    else if (prev != nullptr ) //second of 2 elems
+    else if (prev != nullptr && (back == nullptr)) //last of 2+ elems
     {
       curr->next = prev;
       prev = curr;
@@ -59,16 +59,16 @@ Node * reverseList(Node * head)
       back = nullptr;
       std::cout<<std::endl<<"hi3";
     }
-  //  if (prev !=nullptr && (curr != nullptr))
-  //  {
- //     curr->next = prev;
-//      prev = curr;
-//      curr = back;
- //     back = back->next;
-//      std::cout<<std::endl<<"hi4";
-//    }
-  std::cout<<std::endl<<prev->val;
-  std::cout<<std::endl<<"watch";
+  else if(prev !=nullptr && (back != nullptr)) //middle of 2+ elems
+  {
+     curr->next = prev;
+      prev = curr;
+      curr = back;
+     back = back->next;
+      std::cout<<std::endl<<"hi4";
+  }
+//  std::cout<<std::endl<<prev->val;
+
   }
 
   return prev;
@@ -80,10 +80,14 @@ int main()
   Node b("b");
   Node c("c");
   Node d("d");
+  Node e("e");
+  Node f("f");
 
   a.next = &b;
   b.next = &c;
   c.next = &d;
+  d.next = &e;
+  e.next = &f;
 
 //  std::cout<<"b "<<b.val<<std::endl;
 
@@ -94,7 +98,7 @@ int main()
   
   if(end.next == nullptr)std::cout<<std::endl<<"nullptr";
   else std::cout <<std::endl<<end.val;
-  printList(&d);
+  printList(&f);
 
 //  std::cout<<endl<<b.val;
 //  std::cout<<endl<<a.val;
